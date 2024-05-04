@@ -34,3 +34,17 @@ if (video) {
 } else {
     console.error("Video element with id 'myVideo' not found.");
 }
+
+
+window.addEventListener('scroll', function() {
+    var flexb25Elements = document.querySelectorAll('.flexb25');
+    var scrollPosition = window.scrollY + window.innerHeight;
+    
+    flexb25Elements.forEach(function(element) {
+      var elementPosition = element.offsetTop + (element.offsetHeight / 2);
+      if (scrollPosition > elementPosition) {
+        element.classList.add('visible');
+      }
+    });
+  });
+   
